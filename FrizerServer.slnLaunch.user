@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "New Profile",
+    "Projects": [
+      {
+        "Path": "FrizerServer\\FrizerServer.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "FrizerieWebClient\\FrizerieWebClient.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

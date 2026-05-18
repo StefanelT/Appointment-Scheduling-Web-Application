@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="FrizerieWebClient/FrizerieWebClient.csproj" Id="1c1ebe25-e812-435a-9944-dbe9e191d8bc">
+    <BuildDependency Project="FrizerServer/FrizerServer.csproj" />
+  </Project>
+  <Project Path="FrizerServer/FrizerServer.csproj" Id="7cede384-c389-43fa-b85e-1feca9a389fe" />
+</Solution>

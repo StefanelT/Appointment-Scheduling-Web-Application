@@ -1,0 +1,25 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="FrizerieWebClient.Site" %>
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <title>Frizerie</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    
+   <link href='SiteMaster.css?v=<%=DateTime.Now.Ticks%>' rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="navbar">
+            <div class="btn-do">
+                <a href="Adauga.aspx">Fă o Programare</a>
+            </div>
+            <div class="btn-see">
+                <a href="Lista.aspx">Vezi Programări</a>
+            </div>
+        </div>
+        <div class="container">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>

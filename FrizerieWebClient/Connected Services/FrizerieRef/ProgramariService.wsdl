@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="AdaugaInDB">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="client" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="data" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="tip" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AdaugaInDBResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AdaugaInDBResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModificaProgramare">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="client" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="data" type="s:dateTime" />
+            <s:element minOccurs="0" maxOccurs="1" name="tip" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModificaProgramareResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ModificaProgramareResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StergeProgramare">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="StergeProgramareResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="StergeProgramareResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetToateProgramarile">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetToateProgramarileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetToateProgramarileResult" type="tns:ArrayOfModelProgramare" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfModelProgramare">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="ModelProgramare" nillable="true" type="tns:ModelProgramare" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ModelProgramare">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Client" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Data" type="s:dateTime" />
+          <s:element minOccurs="0" maxOccurs="1" name="TipTuns" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="FiltreazaDupaData">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="dataCautata" type="s:dateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FiltreazaDupaDataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="FiltreazaDupaDataResult" type="tns:ArrayOfModelProgramare" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="AdaugaInDBSoapIn">
+    <wsdl:part name="parameters" element="tns:AdaugaInDB" />
+  </wsdl:message>
+  <wsdl:message name="AdaugaInDBSoapOut">
+    <wsdl:part name="parameters" element="tns:AdaugaInDBResponse" />
+  </wsdl:message>
+  <wsdl:message name="ModificaProgramareSoapIn">
+    <wsdl:part name="parameters" element="tns:ModificaProgramare" />
+  </wsdl:message>
+  <wsdl:message name="ModificaProgramareSoapOut">
+    <wsdl:part name="parameters" element="tns:ModificaProgramareResponse" />
+  </wsdl:message>
+  <wsdl:message name="StergeProgramareSoapIn">
+    <wsdl:part name="parameters" element="tns:StergeProgramare" />
+  </wsdl:message>
+  <wsdl:message name="StergeProgramareSoapOut">
+    <wsdl:part name="parameters" element="tns:StergeProgramareResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetToateProgramarileSoapIn">
+    <wsdl:part name="parameters" element="tns:GetToateProgramarile" />
+  </wsdl:message>
+  <wsdl:message name="GetToateProgramarileSoapOut">
+    <wsdl:part name="parameters" element="tns:GetToateProgramarileResponse" />
+  </wsdl:message>
+  <wsdl:message name="FiltreazaDupaDataSoapIn">
+    <wsdl:part name="parameters" element="tns:FiltreazaDupaData" />
+  </wsdl:message>
+  <wsdl:message name="FiltreazaDupaDataSoapOut">
+    <wsdl:part name="parameters" element="tns:FiltreazaDupaDataResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ProgramariServiceSoap">
+    <wsdl:operation name="AdaugaInDB">
+      <wsdl:input message="tns:AdaugaInDBSoapIn" />
+      <wsdl:output message="tns:AdaugaInDBSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ModificaProgramare">
+      <wsdl:input message="tns:ModificaProgramareSoapIn" />
+      <wsdl:output message="tns:ModificaProgramareSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="StergeProgramare">
+      <wsdl:input message="tns:StergeProgramareSoapIn" />
+      <wsdl:output message="tns:StergeProgramareSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetToateProgramarile">
+      <wsdl:input message="tns:GetToateProgramarileSoapIn" />
+      <wsdl:output message="tns:GetToateProgramarileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FiltreazaDupaData">
+      <wsdl:input message="tns:FiltreazaDupaDataSoapIn" />
+      <wsdl:output message="tns:FiltreazaDupaDataSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ProgramariServiceSoap" type="tns:ProgramariServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AdaugaInDB">
+      <soap:operation soapAction="http://tempuri.org/AdaugaInDB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModificaProgramare">
+      <soap:operation soapAction="http://tempuri.org/ModificaProgramare" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StergeProgramare">
+      <soap:operation soapAction="http://tempuri.org/StergeProgramare" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetToateProgramarile">
+      <soap:operation soapAction="http://tempuri.org/GetToateProgramarile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FiltreazaDupaData">
+      <soap:operation soapAction="http://tempuri.org/FiltreazaDupaData" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ProgramariServiceSoap12" type="tns:ProgramariServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="AdaugaInDB">
+      <soap12:operation soapAction="http://tempuri.org/AdaugaInDB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModificaProgramare">
+      <soap12:operation soapAction="http://tempuri.org/ModificaProgramare" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="StergeProgramare">
+      <soap12:operation soapAction="http://tempuri.org/StergeProgramare" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetToateProgramarile">
+      <soap12:operation soapAction="http://tempuri.org/GetToateProgramarile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FiltreazaDupaData">
+      <soap12:operation soapAction="http://tempuri.org/FiltreazaDupaData" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ProgramariService">
+    <wsdl:port name="ProgramariServiceSoap" binding="tns:ProgramariServiceSoap">
+      <soap:address location="https://localhost:44328/ProgramariService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ProgramariServiceSoap12" binding="tns:ProgramariServiceSoap12">
+      <soap12:address location="https://localhost:44328/ProgramariService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
